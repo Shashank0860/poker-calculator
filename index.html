@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Bet Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>♠️ Poker Bet Tracker</h1>
+
+    <!-- Players -->
+    <div id="players"></div>
+
+    <button onclick="addPlayer()">➕ Add Player</button>
+
+    <br><br>
+
+    <!-- Pot -->
+    <div id="pot" class="pot">Total Pot: 0</div>
+
+    <!-- Winner -->
+    <label>🏆 Select Winner:</label>
+    <select id="winner"></select>
+
+    <br><br>
+
+    <!-- Buttons -->
+    <button onclick="safeCalculate()">💰 Calculate</button>
+    <button onclick="resetGame()">🔄 Reset</button>
+
+    <!-- Last Result -->
+    <div id="lastResult" class="last-result"></div>
+
+    <!-- History -->
+    <div id="results"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

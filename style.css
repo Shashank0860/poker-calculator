@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1e1e2f;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    background: #2f2f4f;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* Player Row */
+#players div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #3a3a5a;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+input, select {
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+}
+
+/* Chip */
+.chip {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #4cafef;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a9edc;
+}
+
+/* Delete */
+.delete-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Pot */
+.pot {
+    background: #1f1f35;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Last result */
+.last-result {
+    background: #2a2a45;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* History */
+.round {
+    background: #2a2a45;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.round-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #4cafef;
+}
+
+.player-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.winner {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+.profit {
+    color: #00e676;
+}
+
+.loss {
+    color: #ff5252;
+}
