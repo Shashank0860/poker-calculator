@@ -1,44 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Poker Bet Tracker</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poker Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+  <div class="noise"></div>
 
-    <h1>♠️ Poker Bet Tracker</h1>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-suit">♠</span>
+        <span class="logo-text">POKER TRACKER</span>
+        <span class="logo-suit">♦</span>
+      </div>
+      <div class="round-badge">ROUND <span id="roundNumber">1</span></div>
+    </div>
+  </header>
 
-    <!-- Players -->
-    <div id="players"></div>
+  <main>
+    <div class="col col-left">
+      <section class="card" id="addPlayerSection">
+        <h2 class="section-title">Players</h2>
+        <div class="add-player-row">
+          <input type="text" id="newPlayerName" placeholder="Player name…" maxlength="20" autocomplete="off" />
+          <input type="number" id="newPlayerBalance" placeholder="Starting chips" min="1" />
+          <button class="btn btn-add" onclick="addPlayer()">+ Add</button>
+        </div>
+        <div id="playerList" class="player-list"></div>
+      </section>
 
-    <button onclick="addPlayer()">➕ Add Player</button>
+      <section class="card pot-card">
+        <div class="pot-label">TOTAL POT</div>
+        <div class="pot-amount" id="potDisplay">0</div>
+        <div class="pot-sub" id="potSub">Place bets to see the pot</div>
+      </section>
+    </div>
 
-    <br><br>
+    <div class="col col-right">
+      <section class="card" id="winnersSection">
+        <h2 class="section-title">Select Winner(s)</h2>
+        <p class="section-hint">Only players who placed a bet can win.</p>
+        <div id="winnerList" class="winner-list"></div>
+      </section>
 
-    <!-- Pot -->
-    <div id="pot" class="pot">Total Pot: 0</div>
+      <section class="card actions-card">
+        <button class="btn btn-deal" onclick="settleRound()">
+          <span class="btn-icon">🃏</span> Settle Round
+        </button>
+        <button class="btn btn-reset" onclick="resetBets()">
+          <span class="btn-icon">↺</span> Clear Bets
+        </button>
+      </section>
 
-    <!-- Winner -->
-    <label>🏆 Select Winner:</label>
-    <select id="winner"></select>
+      <section class="card result-card" id="resultCard" style="display:none;">
+        <h2 class="section-title">Last Round</h2>
+        <div id="resultBody"></div>
+      </section>
+    </div>
+  </main>
 
-    <br><br>
+  <section class="card wide-card" id="balanceSection">
+    <h2 class="section-title">Running Balances</h2>
+    <div id="balanceTable" class="balance-table"></div>
+  </section>
 
-    <!-- Buttons -->
-    <button onclick="safeCalculate()">💰 Calculate</button>
-    <button onclick="resetGame()">🔄 Reset</button>
+  <section class="card wide-card" id="historySection">
+    <h2 class="section-title">Game History</h2>
+    <div id="historyLog" class="history-log">
+      <p class="empty-state">No rounds played yet.</p>
+    </div>
+  </section>
 
-    <!-- Last Result -->
-    <div id="lastResult" class="last-result"></div>
+  <div id="toast" class="toast"></div>
 
-    <!-- History -->
-    <div id="results"></div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
